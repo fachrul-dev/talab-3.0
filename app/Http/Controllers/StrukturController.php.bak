@@ -1,0 +1,53 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Struktur;
+
+class StrukturController extends Controller
+{
+
+    public function index()
+    {
+        $pegawai = Struktur::all();
+    
+        return view('struktur', ['pegawai' => $pegawai]);
+    }
+
+    public function destroy($id)
+    {
+        $pegawai = Struktur::findOrFail($id);
+        // Implementasikan logika penghapusan pegawai
+        $pegawai->delete();
+
+        // Redirect atau kembalikan respon yang sesuai
+        return redirect()->route('manajemen-struktur')->with('success', 'Pegawai berhasil dihapus.');
+    }
+
+
+    public function update(Request $request, $id)
+    {
+        $employee = Struktur::findOrFail($id);
+
+        // Validasi data yang diterima dari form
+        $request->validate([
+            'struktur' => 'nullable',
+            'name' => 'required',
+            'email' => 'nullable|email'
+        ]);
+        
+        // Memperbarui data pegawai
+        $employee->struktur = $request->input('struktur');
+        $employee-> name = $request->input('name');
+        $employee->email = $request->input('email');
+        
+
+        
+        $employee->save();
+        
+
+        // Redirect atau kembalikan respon yang sesuai
+        return redirect()->route('manajemen-struktur')->with('success', 'Data struktur berhasil diperbarui.');
+    }
+}
