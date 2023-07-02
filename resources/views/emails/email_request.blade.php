@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>santrikoding.com</title>
+    <title>Talab 3.0</title>
 </head>
 <body>
     <h3>{{ $data['name'] }}</h3>

@@ -224,13 +224,13 @@ class RequestController extends Controller
         // dd($attach);
 
         $struktur_list = Strukturs::where('struktur', '=', $status_request->struktur)->get();
-        $users = Auth::user();
+        $users = Auth::user()->name;
         foreach($struktur_list as $list){
             $button_email = RequestData::getButtonEmail($request_data->id, $status_request->struktur, $list->email);
             $data = [
                 'name' => 'Halo '.$list->name.' ['.$struktur_title.']',
                 'body' => 'Mohon Konfirmasi Data ini',
-                'name_pengirim' => $users->name,
+                'name_pengirim' => $users,
                 'DataRequest' => $request_data,
                 'ButtonStatus' => $button_email,
                 'Attachments' => $attach,

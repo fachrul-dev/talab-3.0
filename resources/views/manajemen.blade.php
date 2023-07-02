@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
                     <h3>Manajemen Pegawai</h3>
-                    
+
                 </div>
             </div>
         </div>
@@ -35,28 +35,27 @@
                                 <div class="modal-body">
                                     <form id="createForm" action="{{ route('pegawai.store') }}" method="POST">
                                         @csrf
-                    
+
                                         <div class="form-group">
                                             <label for="name">Name:</label>
                                             <input type="text" name="name" class="form-control">
                                         </div>
-                    
+
                                         <div class="form-group">
                                             <label for="email">Email:</label>
                                             <input type="email" name="email" class="form-control" >
                                         </div>
-                    
+
                                         <div class="form-group">
                                             <label for="password">Password:</label>
                                             <input type="password" name="password" class="form-control">
                                         </div>
-                    
+
                                         <div class="form-group">
                                             <label for="role">Role:</label>
                                             <select name="role" class="form-control">
                                                 <option value="1" >Admin</option>
                                                 <option value="2" >User</option>
-                                                <option value="3" >Unknown</option>
                                             </select>
                                         </div>
 
@@ -66,11 +65,11 @@
                                         </div>
                                     </form>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
                 <div class="card-body">
                     <table class="table" id="table1">
@@ -110,7 +109,7 @@
                                     </form>
                                 </td>
                             </tr>
-                    
+
                             <div class="modal fade" id="editModal{{ $employee->id }}" tabindex="-1">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -122,22 +121,22 @@
                                             <form id="updateForm{{ $employee->id }}" action="{{ route('pegawai.update', $employee->id) }}" method="POST">
                                                 @csrf
                                                 @method('PUT')
-                            
+
                                                 <div class="form-group">
                                                     <label for="name">Name:</label>
                                                     <input type="text" name="name" class="form-control" value="{{ $employee->name }}">
                                                 </div>
-                            
+
                                                 <div class="form-group">
                                                     <label for="email">Email:</label>
                                                     <input type="email" name="email" class="form-control" value="{{ $employee->email }}">
                                                 </div>
-                            
+
                                                 <div class="form-group">
                                                     <label for="password">Password:</label>
                                                     <input type="password" name="password" class="form-control">
                                                 </div>
-                            
+
                                                 <div class="form-group">
                                                     <label for="role">Role:</label>
                                                     <select name="role" class="form-control">
@@ -152,16 +151,16 @@
                                                 </div>
                                             </form>
                                         </div>
-                                        
+
                                     </div>
                                 </div>
                             </div>
-                            
+
                             @endforeach
                         </tbody>
                     </table>
-                    
-                    
+
+
 
 
 
