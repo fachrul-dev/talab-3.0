@@ -7,17 +7,7 @@
 @section('container')
 
 
-{{-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet"> --}}
 
-{{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/css/fileinput.css" media="all" rel="stylesheet" type="text/css"/> --}}
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" media="all" rel="stylesheet" type="text/css"/>
-{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/js/fileinput.js" type="text/javascript"></script> --}}
-{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/themes/fa/theme.js" type="text/javascript"></script> --}}
-<link href="{{ asset('dist/assets/extensions/fileinput/css/fileinput.min.css') }}" media="all" rel="stylesheet" type="text/css"/>
-<link href="{{ asset('dist/assets/css/custom.css') }}" media="all" rel="stylesheet" type="text/css"/>
-<script src="{{ asset('dist/assets/extensions/fileinput/js/fileinput.min.js') }}"></script>
-<script src="{{ asset('dist/assets/extensions/fileinput/themes/fa4/theme.min.js') }}"></script>
-<script src="{{ asset('dist/assets/js/fikasa_fileinput.js') }}"></script>
 
 
 
@@ -26,15 +16,7 @@
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
                     <h3>Data Request</h3>
-                </div>
-                <div class="col-12 col-md-6 order-md-2 order-first">
-                    <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                            {{-- <li class="breadcrumb-item active" aria-current="page"></li> --}}
-                        </ol>
-                    </nav>
-                </div>
+</div>
             </div>
         </div>
 

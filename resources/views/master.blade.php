@@ -28,16 +28,7 @@
     {{--<script src="{{ asset('dist/assets/datatable/dataTables.bootstrap4.min.css') }}"></script>--}}
 
 
-    <script src="{{ asset('dist/assets/js/bootstrap.js') }}"></script>
-    <script src="{{ asset('dist/assets/js/app.js') }}"></script>
 
-    <!-- Need: Apexcharts -->
-    <script src="{{ asset('dist/assets/extensions/apexcharts/apexcharts.min.js') }}"></script>
-    <script src="{{ asset('dist/assets/js/pages/dashboard.js') }}"></script>
-    <script src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
-    <script src="{{ asset('dist/assets/js/pages/datatables.js') }}"></script>
-
-    @yield('script')
 </head>
 
 <body>
@@ -124,7 +115,26 @@
 
 
 
+{{-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet"> --}}
 
+{{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/css/fileinput.css" media="all" rel="stylesheet" type="text/css"/> --}}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" media="all" rel="stylesheet" type="text/css"/>
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/js/fileinput.js" type="text/javascript"></script> --}}
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/themes/fa/theme.js" type="text/javascript"></script> --}}
+<link href="{{ asset('dist/assets/extensions/fileinput/css/fileinput.min.css') }}" media="all" rel="stylesheet" type="text/css"/>
+<link href="{{ asset('dist/assets/css/custom.css') }}" media="all" rel="stylesheet" type="text/css"/>
+<script src="{{ asset('dist/assets/extensions/fileinput/js/fileinput.min.js') }}"></script>
+<script src="{{ asset('dist/assets/extensions/fileinput/themes/fa4/theme.min.js') }}"></script>
+<script src="{{ asset('dist/assets/js/fikasa_fileinput.js') }}"></script>
+
+    <script src="{{ asset('dist/assets/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('dist/assets/js/app.js') }}"></script>
+
+    <!-- Need: Apexcharts -->
+    <script src="{{ asset('dist/assets/extensions/apexcharts/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('dist/assets/js/pages/dashboard.js') }}"></script>
+    <script src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
+    <script src="{{ asset('dist/assets/js/pages/datatables.js') }}"></script>
 
 
 </body>
