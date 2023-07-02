@@ -19,8 +19,8 @@ class UserSeeder extends Seeder
 
         // Menambahkan data pengguna
         User::create([
-            'name' => 'Jogel',
-            'email' => 'jogel@yopmail.com',
+            'name' => 'Admin',
+            'email' => 'admin@yopmail.com',
             'role' => 1,
             'password' => Hash::make('admin'),
         ]);
