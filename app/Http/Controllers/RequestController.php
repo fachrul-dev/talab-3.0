@@ -20,8 +20,8 @@ use DataTables;
 
 class RequestController extends Controller
 {
-
     function loadviewstatusrequest(Request $request){
+        
         $request_id = $request->id;
         $list = RequestData::getAllStatusRequest($request_id);
         $request_data = RequestData::find($request_id);
@@ -91,16 +91,18 @@ class RequestController extends Controller
     }
     public function index(Request $request)
 {
+
+    
     if ($request->ajax()) {
         $user = Auth::user(); // Get the currently logged-in user
 
         // Fetch data only for the logged-in user
         $data = RequestData::where('user_id', $user->id)->latest()->get();
-
         return datatables()->of($data)
             ->addIndexColumn()
             ->editColumn('created_at', function ($row) {
-                return date('d/m/Y H:i', strtotime($row->created_at));
+                $created_at = \Carbon\Carbon::parse($row->created_at, 'UTC')->setTimezone('Asia/Jakarta');
+                return $created_at->format('d/m/Y H:i');
             })
             ->editColumn('type', function ($row) {
                 $type = str_replace('_', ' ', $row->type);
@@ -252,7 +254,10 @@ class RequestController extends Controller
         }
         $get_data->status = $status;
         $get_data->ChangedByEmail = $email;
+
+        date_default_timezone_set('Asia/Jakarta');
         $get_data->ChangedAt = date('Y-m-d H:i:s');
+
         $get_data->save();
         $get_data = StatusRequest::where('request_id', '=', $id, 'and')->where('id','>', $get_data->id)->orderBy('ID', 'asc');
         if($status == 'approved'){
