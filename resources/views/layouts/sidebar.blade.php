@@ -31,39 +31,50 @@ $userRole = Auth::user()->role; // Ganti dengan kode yang sesuai untuk mendapatk
             <ul class="menu">
                 {{-- <li
                     {{--                    class="sidebar-item {{ Route::is('/dashboard') ? 'active' : '' }}">--}}
-                    {{-- class="sidebar-item {{ \Illuminate\Support\Facades\Request::segment(1) == 'dashboard' ? 'active' : '' }}">
-                    <a href="{{ url('/dashboard') }}" class='sidebar-link'>
-                        <i class="bi bi-house-fill"></i>
-                        <span>Dashboard</span>
-                    </a> --}}
-                {{-- </li> --}} 
-                <li
+                {{-- class="sidebar-item {{ \Illuminate\Support\Facades\Request::segment(1) == 'dashboard' ? 'active' : '' }}">
+                <a href="{{ url('/dashboard') }}" class='sidebar-link'>
+                    <i class="bi bi-house-fill"></i>
+                    <span>Dashboard</span>
+                </a> --}}
+                {{-- </li> --}}
 
-                @if ($userRole != 2) 
-                    class="sidebar-item {{ \Illuminate\Support\Facades\Request::segment(1) == 'manajemen-pegawai' ? 'active' : '' }}">
-                    <a href="{{ url('/manajemen-pegawai') }}" class='sidebar-link'>
-                        <i class="bi bi-person"></i>
-                        <span>Manajemen Pegawai</span>
-                    </a>
-                </li>
 
-                <li
-                
-                class="sidebar-item {{ \Illuminate\Support\Facades\Request::segment(1) == 'manajemen-struktur' ? 'active' : '' }}">
-                <a href="{{ url('/manajemen-struktur') }}" class='sidebar-link'>
-                    <i class="bi bi-person-lines-fill"></i>
-                    <span>Manajemen Struktur</span>
-                </a>
-                <li
+                @if ($userRole != 2)
+                    <li
+                        class="sidebar-item {{ \Illuminate\Support\Facades\Request::segment(1) == 'pegawai' ? 'active' : '' }}">
+                        <a href="{{ url('/pegawai') }}" class='sidebar-link'>
+                            <i class="bi bi-person"></i>
+                            <span>Manajemen Pegawai</span>
+                        </a>
+                    </li>
+
+                    <li
+
+                        class="sidebar-item {{ \Illuminate\Support\Facades\Request::segment(1) == 'manajemen-struktur' ? 'active' : '' }}">
+                        <a href="{{ url('/manajemen-struktur') }}" class='sidebar-link'>
+                            <i class="bi bi-person-lines-fill"></i>
+                            <span>Manajemen Struktur</span>
+                        </a>
+                    </li>
+
                 @endif
-                @if ($userRole != 1) 
-                class="sidebar-item {{ \Illuminate\Support\Facades\Request::segment(1) == 'request' ? 'active' : '' }}">
-                <a href="{{ url('/request') }}" class='sidebar-link'>
-                    <i class="bi bi-clipboard-check"></i>
-                    <span>Request</span>
-                </a>
-            </li>
-            @endif
+                @if ($userRole != 1)
+                    <li
+                        class="sidebar-item {{ \Illuminate\Support\Facades\Request::segment(1) == 'request' ? 'active' : '' }}">
+                        <a href="{{ url('/request') }}" class='sidebar-link'>
+                            <i class="bi bi-clipboard-check"></i>
+                            <span>Request</span>
+                        </a>
+                    </li>
+
+                    <li
+                        class="sidebar-item {{ \Illuminate\Support\Facades\Request::segment(1) == 'request-report' ? 'active' : '' }}">
+                        <a href="{{ url('/request-report') }}" class='sidebar-link'>
+                            <i class="bi bi-clipboard-check"></i>
+                            <span>Report Request</span>
+                        </a>
+                    </li>
+                @endif
             </ul>
         </div>
     </div>

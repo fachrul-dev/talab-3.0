@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Strukturs;
+
+use App\Http\Controllers\StrukturController;
 
 class RequestData extends Model
 {
@@ -56,5 +59,27 @@ class RequestData extends Model
         }
 
         return false;
+    }
+
+    public function getLastStatus(){
+        $status = self::getAllStatusRequest($this->id);
+        $obj_last = null;
+        foreach($status as $row){
+            $status = $row->status;
+            $struktur = StrukturController::getStrukturLabel($row->struktur);
+            if($status == 'rejected'){
+                return $row;
+            }elseif($status == 'processed'){
+                // $last_status = 'Masih menunggu Konfirmasi '.$struktur;
+                $obj_last = $row;
+            }elseif($status == 'approved'){
+                // $last_status = 'Data Berhasil di konfirmasi oleh semua bagian';
+                $obj_last = $row;
+            }
+        }
+
+        if($obj_last){
+            return $obj_last;
+        }
     }
 }
