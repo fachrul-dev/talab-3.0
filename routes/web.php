@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RequestReportController;
 use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\RequestController;
 use App\Http\Controllers\FileController;
@@ -56,6 +57,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::any('/request/sendemailrequest/{id}', [RequestController::class,'sendemailrequest'])->name('request.sendemailrequest');
     Route::any('/request/loadviewstatusrequest/{id}', [RequestController::class,'loadviewstatusrequest'])->name('request.loadviewstatusrequest');
     Route::resource('struktur', StrukturController::class);
+
+    Route::get('request-report', [RequestReportController::class, 'index'])->name('requestreport.edit');
 });
 
 Route::any('/request/updatestatusrequest/{id}', [RequestController::class,'updatestatusrequest']);

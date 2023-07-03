@@ -50,6 +50,8 @@ class FileController extends Controller
         $files = array();
         $files_id = array();
         $filenya = $_FILES[$FileField];
+        $file_o = null;
+
 
         // for ($i = 0; $i < count($filenya['size']); $i++) {
         foreach ($request->$FileField as $row_temp) {
@@ -71,7 +73,7 @@ class FileController extends Controller
             // tipe mime
             // $FileMimeType = $file_arr->getMimeType();
 
-                // isi dengan nama folder tempat kemana file diupload
+            // isi dengan nama folder tempat kemana file diupload
             $tujuan_upload = 'Assets';
             $name_now = date('YmdHis').$FileName;
             $file_arr->move($tujuan_upload,$name_now);
@@ -168,6 +170,11 @@ class FileController extends Controller
             $url_preview = $row->src;
 
             $file_o = null;
+
+            if(!file_exists($url)){
+                continue;
+            }
+
             $size_file = 0;
             // dd(public_path($url));
             // $size_file = Storage::size($row->title);
@@ -177,7 +184,7 @@ class FileController extends Controller
             // //            echo '<pre>';var_dump($size_file);die();
             $size_file = $size_file ? $size_file : 0;
             $ext = pathinfo($url, PATHINFO_EXTENSION);
-                    //    var_dump($ext);die();
+            //    var_dump($ext);die();
 
             $config_type = "";
             $tmp_config = array();
