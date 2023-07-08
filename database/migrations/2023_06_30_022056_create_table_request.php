@@ -17,7 +17,7 @@ return new class extends Migration
             $table->increments('id');
             $table->string('title');
             $table->longText('requirements');
-            $table->enum('type', ['fte','fte_director', 'nonfte']);
+            $table->enum('type', ['fte','fte_director', 'nonfte', 'nonfte_contract']);
             $table->integer('user_id')->unsigned()->nullable();
             $table->timestamps();
         });

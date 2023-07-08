@@ -32,7 +32,7 @@ class StrukturController extends Controller
         $set = self::$struktur_arr;
         if($type_request == 'fte' || $type_request == 'fte_director'){
             return array_keys($set);
-        }elseif($type_request == 'nonfte'){
+        }elseif($type_request == 'nonfte' || $type_request = 'nonfte_contract'){
             unset($set['ceo']);
 
             return array_keys($set);

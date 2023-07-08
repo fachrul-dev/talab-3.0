@@ -101,6 +101,7 @@
                                     <option value="fte">FTE</option>
                                     <option value="fte_director">FTE Director</option>
                                     <option value="nonfte">Non FTE</option>
+                                    <option value="nonfte_contract">Non FTE Contract</option>
                                 </select>
                             </div>
                         </div>
