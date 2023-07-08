@@ -42,7 +42,7 @@ $userRole = Auth::user()->role; // Ganti dengan kode yang sesuai untuk mendapatk
                 @if ($userRole != 2)
                     <li
                         class="sidebar-item {{ \Illuminate\Support\Facades\Request::segment(1) == 'pegawai' ? 'active' : '' }}">
-                        <a href="{{ url('/pegawai') }}" class='sidebar-link'>
+                        <a href="{{ url('/manajemen-pegawai') }}" class='sidebar-link'>
                             <i class="bi bi-person"></i>
                             <span>Manajemen Pegawai</span>
                         </a>
